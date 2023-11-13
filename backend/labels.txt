@@ -1,0 +1,6 @@
+cat
+deer
+dog
+horse
+tiger
+wolve
