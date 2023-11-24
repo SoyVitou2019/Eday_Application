@@ -1,5 +1,5 @@
 import gradio as gr
-from clients import send_request
+from frontend.clients import send_request
 import json
 import ast
 
@@ -11,7 +11,7 @@ def save_non_abuse_class(top_classes):
         
     
 def prediction(img):
-    top_classes = send_request(img_input=img, url='http://127.0.0.1:8000/')
+    top_classes = send_request(img_input=img, url='http://18.139.116.122')
     save_class = save_non_abuse_class(top_classes)
     prediction_str = "\n".join([f"{index+1}. {property} : {round(value*100, 2)}%" for index, (property, value) in enumerate(save_class.items())])
     return prediction_str
